@@ -413,3 +413,420 @@ Stack Trace:
 #4 /vagrant/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
 #5 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #6 {main}
+2013-08-29 03:23:30 Error: [NotFoundException] Not Found
+Request URL: /products/index/page:2000
+Stack Trace:
+#0 /vagrant/app/Controller/ProductsController.php(13): PaginatorComponent->paginate('Product')
+#1 [internal function]: ProductsController->index()
+#2 /vagrant/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 /vagrant/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#4 /vagrant/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#5 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2013-08-29 04:52:25 Error: [NotFoundException] Not Found
+Request URL: /products/index/page:2000
+Stack Trace:
+#0 /vagrant/app/Controller/ProductsController.php(13): PaginatorComponent->paginate('Product')
+#1 [internal function]: ProductsController->index()
+#2 /vagrant/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 /vagrant/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#4 /vagrant/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#5 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2013-08-29 05:36:16 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 05:36:16 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 05:36:17 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /fonts/glyphicons-halflings-regular.svg
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 06:30:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 06:32:18 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Request URL: /products/add
+Stack Trace:
+#0 /vagrant/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /vagrant/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO `we...', Array)
+#2 /vagrant/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO `we...')
+#3 /vagrant/lib/Cake/Model/Model.php(1744): DboSource->create(Object(Product), Array, Array)
+#4 /vagrant/app/Controller/ProductsController.php(31): Model->save(Array)
+#5 [internal function]: ProductsController->add()
+#6 /vagrant/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#7 /vagrant/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /vagrant/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#9 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-08-29 07:19:00 Error: Fatal Error (4): syntax error, unexpected T_ENCAPSED_AND_WHITESPACE in [/vagrant/app/View/Products/add.ctp, line 26]
+2013-08-29 07:19:00 Error: [FatalErrorException] syntax error, unexpected T_ENCAPSED_AND_WHITESPACE
+Request URL: /products/add
+Stack Trace:
+#0 /vagrant/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/vagrant/app/Vi...', 26)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/vagrant/app/Vi...', 26, Array)
+#2 /vagrant/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/vagrant/app/Vi...', 26, Array)
+#3 /vagrant/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-29 07:29:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:33:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:38:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:39:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:43:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:43:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:46:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:57:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:58:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:58:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 07:59:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:01:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:02:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:02:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:02:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:02:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:05:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:05:45 Error: [MissingActionException] Action ProductsController::class=() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProductsController',
+  'action' => 'class=',
+)
+Request URL: /products/class=
+Stack Trace:
+#0 /vagrant/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /vagrant/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#2 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-08-29 08:06:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:08:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:08:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:09:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:09:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:09:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:29:36 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Product.' in 'where clause'
+Request URL: /products/add
+Stack Trace:
+#0 /vagrant/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /vagrant/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Product...', Array)
+#2 /vagrant/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT `Product...', Array, Array)
+#3 /vagrant/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Product...', false)
+#4 /vagrant/lib/Cake/Model/Model.php(2696): DboSource->read(Object(Product), Array)
+#5 /vagrant/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#6 /vagrant/lib/Cake/Model/Model.php(799): DboSource->query('findAllBy', Array, Object(Product))
+#7 /vagrant/app/Controller/ProductsController.php(29): Model->__call('findAllBy', Array)
+#8 /vagrant/app/Controller/ProductsController.php(29): Product->findAllBy('Brand.brand_nam...')
+#9 [internal function]: ProductsController->add()
+#10 /vagrant/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#11 /vagrant/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /vagrant/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#13 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-08-29 08:29:58 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Product.brand_name' in 'where clause'
+Request URL: /products/add
+Stack Trace:
+#0 /vagrant/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /vagrant/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Product...', Array)
+#2 /vagrant/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT `Product...', Array, Array)
+#3 /vagrant/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Product...', false)
+#4 /vagrant/lib/Cake/Model/Model.php(2696): DboSource->read(Object(Product), Array)
+#5 /vagrant/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#6 /vagrant/lib/Cake/Model/Model.php(799): DboSource->query('findAllBybrand_...', Array, Object(Product))
+#7 /vagrant/app/Controller/ProductsController.php(29): Model->__call('findAllBybrand_...', Array)
+#8 /vagrant/app/Controller/ProductsController.php(29): Product->findAllBybrand_name('Brand.brand_nam...')
+#9 [internal function]: ProductsController->add()
+#10 /vagrant/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#11 /vagrant/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /vagrant/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#13 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-08-29 08:33:59 Error: Fatal Error (1): Call to undefined function brand_name() in [/vagrant/app/Controller/ProductsController.php, line 29]
+2013-08-29 08:33:59 Error: [FatalErrorException] Call to undefined function brand_name()
+Request URL: /products/add
+Stack Trace:
+#0 /vagrant/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/vagrant/app/Co...', 29)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/vagrant/app/Co...', 29, Array)
+#2 /vagrant/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/vagrant/app/Co...', 29, Array)
+#3 /vagrant/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-29 08:34:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:38:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:39:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:40:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:42:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:43:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 08:45:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery-2.0.3.min.map
+Stack Trace:
+#0 /vagrant/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-29 09:33:32 Error: Fatal Error (1): Cannot use string offset as an array in [/vagrant/app/Controller/ProductsController.php, line 31]
+2013-08-29 09:33:32 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /products/add
+Stack Trace:
+#0 /vagrant/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use stri...', '/vagrant/app/Co...', 31)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', '/vagrant/app/Co...', 31, Array)
+#2 /vagrant/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', '/vagrant/app/Co...', 31, Array)
+#3 /vagrant/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

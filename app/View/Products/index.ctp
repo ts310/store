@@ -1,23 +1,31 @@
+<div class="container">
+
 <div class="page-header">
 <h1>商品一覧</h1>
 </div>
 
-<?php echo $this->Paginator->prev('<<Prev') ?>
-<?php echo $this->Paginator->first('First') ?>
-<?php echo $this->Paginator->last('Last') ?>
-<?php echo $this->Paginator->next('Next>>') ?>
+<p><?php echo $this->Html->link('商品登録', array('controller' => 'products', 'action' => 'add')) ?></p>
+
+<div><?php echo $this->Paginator->counter('{:count}件中{:start}~{:end}を表示中') ?></div>
+<div class="pagination">
+	<?php if ($this->Paginator->hasPrev()) {echo $this->Paginator->prev('<<Prev', null, null, array('class' => 'disabled'));} ?>
+	<?php echo $this->Paginator->first('First') ?>
+	<?php echo $this->Paginator->numbers(array('modulus' => 4)) ?>
+	<?php echo $this->Paginator->last('Last') ?>
+	<?php if ($this->Paginator->hasNext()) {echo $this->Paginator->next('Next>>', null, null, array('class' => 'disabled'));} ?>
+</div>
 
 <table class="table table-striped">
 	
 	<tr>
-		<td>ID</td>
-		<td>Item name</td>
-		<td>Item comment</td>
-		<td>Item left</td>
-		<td>Price</td>
-		<td>Release date</td>
-		<td>Brand</td>
-		<td>Buyer name</td>
+		<th>ID</th>
+		<th>Item name</th>
+		<th>Item comment</th>
+		<th>Item left</th>
+		<th><?php echo $this->Paginator->sort('price', 'Price') ?></th>
+		<th>Release date</th>
+		<th><?php echo $this->Paginator->sort('Brand.brand_name', 'Brand') ?></th>
+		<th>Buyer name</th>
 	</tr>
 	
 	<?php foreach ($products as $product): ?>
@@ -35,3 +43,13 @@
 	<?php unset($product) ?>
 
 </table>
+
+<div class="pagination">
+	<?php if ($this->Paginator->hasPrev()) {echo $this->Paginator->prev('<<Prev', null, null, array('class' => 'disabled'));} ?>
+	<?php echo $this->Paginator->first('First') ?>
+	<?php echo $this->Paginator->numbers(array('modulus' => 4)) ?>
+	<?php echo $this->Paginator->last('Last') ?>
+	<?php if ($this->Paginator->hasNext()) {echo $this->Paginator->next('Next>>', null, null, array('class' => 'disabled'));} ?>
+</div>
+
+</div>

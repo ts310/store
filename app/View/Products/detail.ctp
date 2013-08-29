@@ -1,6 +1,10 @@
+<div class="container">
+
 <div class="page-header">
 <h1>商品詳細</h1>
 </div>
+
+<p><?php echo $this->Html->link('リストに戻る', array('controller' => 'products', 'action' => 'index')) ?></p>
 
 <table class="table">
 
@@ -33,7 +37,6 @@
 		<td><?php echo $product['Buyer']['user_nickname'] ?></td>
 	</tr>
 
-
-
-
 </table>
+
+</div>
