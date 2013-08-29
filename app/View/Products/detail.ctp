@@ -1,6 +1,8 @@
+<div class="page-header">
 <h1>商品詳細</h1>
+</div>
 
-<table>
+<table class="table">
 
 	<tr>
 		<td>商品ID</td>

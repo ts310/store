@@ -1,6 +1,13 @@
+<div class="page-header">
 <h1>商品一覧</h1>
+</div>
 
-<table>
+<?php echo $this->Paginator->prev('<<Prev') ?>
+<?php echo $this->Paginator->first('First') ?>
+<?php echo $this->Paginator->last('Last') ?>
+<?php echo $this->Paginator->next('Next>>') ?>
+
+<table class="table table-striped">
 	
 	<tr>
 		<td>ID</td>

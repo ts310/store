@@ -2,9 +2,15 @@
 
 class ProductsController extends AppController {
 	public $helpers = array('Html', 'Form');
+	public $components = array('Paginator');
+	
+	public $paginate = array('limit' => 20, 'order' => array('Product.id' => 'asc'));
 	
 	public function index() {
-		$this->set('products', $this->Product->find('all'));
+		$this->Paginator->settings = $this->paginate;
+		
+		
+		$this->set('products', $this->Paginator->paginate('Product'));
 	}
 	
 	public function detail($id = NULL) {
