@@ -34,7 +34,7 @@
 	</tr>
 	<tr>
 		<td>バイヤー</td>
-		<td><?php echo $product['Buyer']['user_nickname'] ?></td>
+		<td><?php echo $product['User']['username'] ?></td>
 	</tr>
 
 </table>

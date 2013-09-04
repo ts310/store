@@ -55,10 +55,22 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><?php echo $this->Html->link('Login', array('controller' => 'buyers', 'action' => 'login')) ?></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+          <?php if (!$userData): ?>
+            <li><?php echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login')) ?></li>
+          <?php endif ?>  
+            <li><?php echo $this->Html->link('商品登録', array('controller' => 'products', 'action' => 'add')) ?></li>
+          <?php if ($userData['admin'] === '0'): ?>
+            <li><?php echo $this->Html->link('ユーザー編集', array('controller' => 'users', 'action' => 'edit', $userData['id'])) ?></li>
+          <?php endif ?>
+          <?php if ($userData['admin'] === '1'): ?>
+            <li><?php echo $this->Html->link('ユーザー一覧', array('controller' => 'users', 'action' => 'view')) ?></li>
+          <?php endif ?>   
           </ul>
+          <?php if ($userData): ?>
+          <ul class="nav navbar-nav navbar-right">
+            <li><?php echo $this->Html->link('You are '. $userData['username'] . '. Sign off', array('controller' => 'users', 'action' => 'signoff')) ?></li>
+          </ul>
+          <?php endif ?>
         </div><!--/.nav-collapse -->
 	</div>
 </div>

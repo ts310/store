@@ -4,8 +4,6 @@
 <h1>商品一覧</h1>
 </div>
 
-<p><?php echo $this->Html->link('商品登録', array('controller' => 'products', 'action' => 'add')) ?></p>
-
 <div><?php echo $this->Paginator->counter('{:count}件中{:start}~{:end}を表示中') ?></div>
 <div class="pagination">
 	<?php if ($this->Paginator->hasPrev()) {echo $this->Paginator->prev('<<Prev', null, null, array('class' => 'disabled'));} ?>
@@ -37,8 +35,10 @@
 		<td><?php echo $this->Number->currency($product['Product']['price'], 'JPY') ?></td>
 		<td><?php echo $this->Time->format($product['Product']['release_date'], '%Y/%m/%d') ?></td>
 		<td><?php echo $product['Brand']['brand_name'] ?><br /><?php echo $product['Brand']['brand_name_kana'] ?></td>
-		<td><?php echo $product['Buyer']['user_nickname'] ?></td>
+		<td><?php echo $product['User']['username'] ?></td>
+		<?php if($userData['id'] === $product['User']['id']): ?>
 		<td><?php echo $this->Html->link('Edit', array('action' => 'edit', $product['Product']['id'])) ?>
+		<?php endif ?>
 	</tr>
 	<?php endforeach ?>
 	<?php unset($product) ?>

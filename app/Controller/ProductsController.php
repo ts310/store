@@ -1,8 +1,8 @@
 <?php
 
 class ProductsController extends AppController {
-	public $helpers = array('Html', 'Form', 'Session');
-	public $components = array('Paginator', 'Session');
+	
+	public $components = array('Paginator');
 	
 	public $paginate = array('limit' => 20, 'order' => array('Product.id' => 'asc'));
 	
@@ -33,6 +33,7 @@ class ProductsController extends AppController {
 		$this->set('brands', $brands);
 		if ($this->request->is('post')) {
 			$this->Product->create();
+			$this->request->data['Product']['user_id'] = $this->Auth->user('id');
 			if ($this->Product->save($this->request->data)) {
 				$this->Session->setFlash(__('The item is created'));
 				return $this->redirect(array('action' => 'index'));
@@ -71,5 +72,20 @@ class ProductsController extends AppController {
 		}
 		
 		$this->set('product', $product);
+	}
+	
+	public function isAuthorized($user) {
+		if ($this->action === 'add') {
+			return 1;
+		}
+		
+		if ($this->action === 'edit') {
+			$productId = $this->request->params['pass'][0];
+			if ($this->Product->isOwnedBy($productId, $user['id'])) {
+				return 1;
+			}
+		}
+		
+		return parent::isAuthorized($user);
 	}
 }

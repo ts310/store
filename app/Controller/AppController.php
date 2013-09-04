@@ -32,4 +32,23 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	
+	public $helpers = array('Html', 'Form', 'Session');
+	public $components = array('Session', 'Auth' => array('loginRedirect' => array('controller' => 'products', 'action' => 'index'), 'logoutRedirect' => array('controller' => 'products', 'action' =>'index'), 'authorize' => array('Controller')));
+	
+	public function beforeFilter() {
+		$this->Auth->allow('index', 'view');
+	}
+	
+	public function beforeRender() {
+		$this->set('userData', $this->Auth->user());
+	}
+	
+	public function isAuthorized($user) {
+		if (isset($user['admin']) && $user['admin'] === '1') {
+			return 1;
+		}
+		
+		return 0;
+	}
 }
