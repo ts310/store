@@ -42,6 +42,27 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 </head>
 
 <body>
+
+<div class="container">
+	<div class="navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <?php echo $this->Html->link('Web Store', array('controller' => 'products', 'action' => 'index'), array('class' => 'navbar-brand')) ?>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><?php echo $this->Html->link('Login', array('controller' => 'buyers', 'action' => 'login')) ?></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+	</div>
+</div>
+
 	<div id="container">
 		<div id="content">
 

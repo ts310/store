@@ -38,6 +38,7 @@
 		<td><?php echo $this->Time->format($product['Product']['release_date'], '%Y/%m/%d') ?></td>
 		<td><?php echo $product['Brand']['brand_name'] ?><br /><?php echo $product['Brand']['brand_name_kana'] ?></td>
 		<td><?php echo $product['Buyer']['user_nickname'] ?></td>
+		<td><?php echo $this->Html->link('Edit', array('action' => 'edit', $product['Product']['id'])) ?>
 	</tr>
 	<?php endforeach ?>
 	<?php unset($product) ?>
