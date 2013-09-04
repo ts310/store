@@ -27,6 +27,8 @@
     )); 
 ?>
 
+<?php echo $this->Form->input('admin', array('type' => 'checkbox')) ?>
+
 </fieldset>
 
 <div class="form-group">

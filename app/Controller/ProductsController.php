@@ -34,6 +34,7 @@ class ProductsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Product->create();
 			$this->request->data['Product']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Product']['brand_id']++;
 			if ($this->Product->save($this->request->data)) {
 				$this->Session->setFlash(__('The item is created'));
 				return $this->redirect(array('action' => 'index'));
@@ -60,6 +61,7 @@ class ProductsController extends AppController {
 		
 		if ($this->request->is('post') || $this->request->is('put')) {
 			$this->Product->id = $id;
+			$this->request->data['Product']['brand_id']++;
 			if ($this->Product->save($this->request->data)) {
 				$this->Session->setFlash(__('Item is edited'));
 				return $this->redirect(array('action' => 'index'));
