@@ -2,9 +2,14 @@
 
 class ProductsController extends AppController {
 	
-	public $components = array('Paginator');
+	public $helpers = array('Js' => array('Jquery'));
+	public $components = array('Paginator', 'RequestHandler');
 	
 	public $paginate = array('limit' => 20, 'order' => array('Product.id' => 'asc'));
+	
+	public function beforeFilter() {
+		$this->Auth->allow('index', 'detail');
+	}
 	
 	public function index() {
 		$this->Paginator->settings = $this->paginate;
@@ -22,7 +27,10 @@ class ProductsController extends AppController {
 			throw new NotFoundException(__('This item does not exist'));
 		}
 		
+		$comments = $this->Product->Comment->findAllByProductId($product['Product']['id']);
+		
 		$this->set('product', $product);
+		$this->set('comments', $comments);
 	}
 	
 	public function add() {
@@ -75,6 +83,16 @@ class ProductsController extends AppController {
 		
 		$this->set('product', $product);
 	}
+	
+	public function save() {
+		$this->Session->setFlash(__('The project note has been saved.'));
+		$this->Product->create();
+  if ($this->Product->save($this->request->data)) {
+      $this->Session->setFlash(__('The project note has been saved.', true), 'flash_success');
+    } else {
+     $this->Session->setFlash(__('The note could not be saved. Please, try again.', true), 'flash_error');
+    }
+  }
 	
 	public function isAuthorized($user) {
 		if ($this->action === 'add') {

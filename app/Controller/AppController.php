@@ -36,10 +36,6 @@ class AppController extends Controller {
 	public $helpers = array('Html', 'Form', 'Session');
 	public $components = array('Session', 'Auth' => array('loginRedirect' => array('controller' => 'products', 'action' => 'index'), 'logoutRedirect' => array('controller' => 'products', 'action' =>'index'), 'authorize' => array('Controller')));
 	
-	public function beforeFilter() {
-		$this->Auth->allow('index', 'view');
-	}
-	
 	public function beforeRender() {
 		$this->set('userData', $this->Auth->user());
 	}

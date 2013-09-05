@@ -39,4 +39,27 @@
 
 </table>
 
+<p><span class="label label-default">Comments</span></p>
+
+<?php foreach ($comments as $comment): ?>
+<div class="panel panel-default ">
+  <div class="panel-body ">
+    <?php echo $comment['User']['username'] ?>
+    <div class="pull-right"><?php echo $this->Time->format($comment['Comment']['created'], '%Y/%m/%d') ?></div>
+  </div>
+  <div class="panel-footer "><?php echo $comment['Comment']['comment'] ?></div>
+</div>
+<?php endforeach ?>
+
+<?php 
+$this->Js->get('#ProductSaveForm')->event(
+		'submit',
+		$this->Js->request(array('controller' => 'products', 'action' => 'save'), array('update' => '#productStatus', 'data' => $this->Js->serializeForm(array('isForm' => true, 'inline' =>true)), 'async' => true, 'dataExpression' => true, 'method' => 'POST', 'complete' => "$('#ProductSaveForm').fadeOut();")));
+
+echo $this->Form->create('Product', array('action' => 'save', 'default' => false));
+echo $this->Form->input('item_title');
+echo $this->Form->end('submit');
+echo $this->Js->writeBuffer();
+?>	
+		
 </div>

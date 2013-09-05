@@ -2,6 +2,7 @@
 
 class Product extends AppModel {
 	public $belongsTo = array('Brand', 'User');
+	public $hasMany = 'Comment';
 	
 	public $validate = array(
 			'item_title' => array('titleCharacter' => array('rule' => array('maxLength', 60), 'message' => 'title should be less than 60 characters'), 'titleEmpty' => array('rule' => 'notEmpty') ),
