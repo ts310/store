@@ -8,7 +8,7 @@ class ProductsController extends AppController {
 	public $paginate = array('limit' => 20, 'order' => array('Product.id' => 'asc'));
 	
 	public function beforeFilter() {
-		$this->Auth->allow('index', 'detail');
+		$this->Auth->allow('index', 'detail', 'save');
 	}
 	
 	public function index() {
@@ -85,6 +85,7 @@ class ProductsController extends AppController {
 	}
 	
 	public function save() {
+		$this->autoRender = false;
 		$this->Session->setFlash(__('The project note has been saved.'));
 		$this->Product->create();
   if ($this->Product->save($this->request->data)) {

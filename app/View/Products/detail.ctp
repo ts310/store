@@ -52,14 +52,15 @@
 <?php endforeach ?>
 
 <?php 
-$this->Js->get('#ProductSaveForm')->event(
+$this->Js->get('#CommentSaveForm')->event(
 		'submit',
-		$this->Js->request(array('controller' => 'products', 'action' => 'save'), array('update' => '#productStatus', 'data' => $this->Js->serializeForm(array('isForm' => true, 'inline' =>true)), 'async' => true, 'dataExpression' => true, 'method' => 'POST', 'complete' => "$('#ProductSaveForm').fadeOut();")));
+		$this->Js->request(array('controller' => 'comments', 'action' => 'save'), array('data' => $this->Js->serializeForm(array('isForm' => true, 'inline' =>true)), 'async' => true, 'dataExpression' => true, 'method' => 'POST')));
 
-echo $this->Form->create('Product', array('action' => 'save', 'default' => false));
-echo $this->Form->input('item_title');
+echo $this->Form->create('Comment', array('action' => 'save', 'default' => false));
+echo $this->Form->input('comment', array('type' => 'text'));
+echo $this->Form->hidden('product_id', array('value' => $product['Product']['id']));
 echo $this->Form->end('submit');
-echo $this->Js->writeBuffer();
+
 ?>	
 		
 </div>

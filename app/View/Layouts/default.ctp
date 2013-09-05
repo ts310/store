@@ -38,6 +38,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+		
+		
 	?>
 </head>
 
@@ -84,8 +86,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
-	<?php echo $this->Html->script('jquery-2.0.3.min')?>
+	<?php echo $this->Html->script('jquery-2.0.3.min'); ?>
 	<?php echo $this->Html->script('bootstrap.min'); ?>
 
+	<?php echo $this->Js->writeBuffer(); ?>
 </body>
 </html>
