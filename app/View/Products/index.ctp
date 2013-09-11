@@ -17,6 +17,7 @@
 	
 	<tr>
 		<th>ID</th>
+		<th>Item image</th>
 		<th>Item name</th>
 		<th>Item comment</th>
 		<th>Item left</th>
@@ -29,6 +30,7 @@
 	<?php foreach ($products as $product): ?>
 	<tr>
 		<td><?php echo $product['Product']['id'] ?></td>
+		<td><?php if ($product['Product']['image']) { echo $this->Html->image('products/' . $product['Product']['id'] .'/small_'. $product['Product']['image']);} ?>
 		<td><?php echo $this->Html->link($product['Product']['item_title'], array('controller' => 'products', 'action' => 'detail', $product['Product']['id'])) ?></td>
 		<td><?php echo $this->Text->truncate($product['Product']['item_comment'], 100, array('ellipsis' => '..')) ?></td>
 		<td><?php echo $product['Product']['items_left'] ?></td>

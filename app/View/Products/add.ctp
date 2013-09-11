@@ -8,6 +8,7 @@
 
 <?php echo $this->Form->create('Product', array(
     'class' => 'form-horizontal',
+	'enctype' => 'multipart/form-data',
     'inputDefaults' => array(
         'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
         'div' => array('class' => 'form-group'),
@@ -56,6 +57,15 @@ echo $this->Form->input('stock', array(
 	'class' => 'form-control',
     )); 
 ?>
+
+<?php 
+echo $this->Form->input('file', array(
+		'class' => 'form-control',
+		'type' => 'file'
+));
+
+?>
+
 </fieldset>
 
 <div class="form-group">

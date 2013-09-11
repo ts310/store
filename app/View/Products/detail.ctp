@@ -6,6 +6,8 @@
 
 <p><?php echo $this->Html->link('リストに戻る', array('controller' => 'products', 'action' => 'index')) ?></p>
 
+<div class="text-center"><?php if ($product['Product']['image']) { echo $this->Html->image('products/' . $product['Product']['id'] .'/'. $product['Product']['image'], array('class' => 'img-rounded'));}?></div>
+
 <table class="table">
 
 	<tr>
@@ -41,26 +43,50 @@
 
 <p><span class="label label-default">Comments</span></p>
 
+<div class="comments">
 <?php foreach ($comments as $comment): ?>
 <div class="panel panel-default ">
-  <div class="panel-body ">
+  <div class="panel-footer ">
     <?php echo $comment['User']['username'] ?>
     <div class="pull-right"><?php echo $this->Time->format($comment['Comment']['created'], '%Y/%m/%d') ?></div>
   </div>
-  <div class="panel-footer "><?php echo $comment['Comment']['comment'] ?></div>
+  <div class="panel-body "><?php echo $comment['Comment']['comment'] ?></div>
 </div>
 <?php endforeach ?>
+</div>
 
 <?php 
-$this->Js->get('#CommentSaveForm')->event(
-		'submit',
-		$this->Js->request(array('controller' => 'comments', 'action' => 'save'), array('data' => $this->Js->serializeForm(array('isForm' => true, 'inline' =>true)), 'async' => true, 'dataExpression' => true, 'method' => 'POST')));
+	echo $this->Form->create('Comment', array('onsubmit' => 'return false;'));
+	echo $this->Form->input('comment', array("type" => "textarea", 'class' => 'form-control', 'style' => 'resize:none'));
+	echo $this->Form->input('product_id', array("value" => $product['Product']['id'], "type" => "hidden"));	
+	echo $this->Form->end();
+?>
 
-echo $this->Form->create('Comment', array('action' => 'save', 'default' => false));
-echo $this->Form->input('comment', array('type' => 'text'));
-echo $this->Form->hidden('product_id', array('value' => $product['Product']['id']));
-echo $this->Form->end('submit');
+<div class="form-group">
+      <button type="submit" class="btn btn-default" onclick="comment();">Submit</button>
+ </div>
 
-?>	
+<script type="text/javascript">
+function comment() {
+	var form = $("#CommentDetailForm").serialize();
+
+	$.ajax({
+      	type:		"POST",
+      	url: 		"/comments/save",
+      	data: 		form,
+      	dataType: 	'json',
+      })
+      .done(function(value) {
+          	if(value.success){
+         	 		$('.comments').append("<div class=\"panel panel-default\"><div class=\"panel-footer\">"+value.username+"<div class=\"pull-right\">"+value.created+"</div></div><div class=\"panel-body\">"+value.comment+"</div></div>");
+         	 	}
+         	else{
+         		alert("error adding comment");
+         	}
+          })
+          ;
+	$('#CommentComment').val('');
+}
+</script>
 		
 </div>

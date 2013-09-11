@@ -9,12 +9,21 @@ class CommentsController extends AppController {
 	}
 	
 	public function save() {
+		$this->autoRender = false;
+		App::uses('CakeTime', 'Utility');
+		
 		$this->Comment->create();
 		$this->request->data['Comment']['user_id'] = $this->Auth->user('id');
 	  	if ($this->Comment->save($this->request->data)) {
-	    	$this->Session->setFlash(__('The project note has been saved.', true), 'flash_success');
+	    	$comment = $this->Comment->find('first', array('order' => array('Comment.id' => 'desc')));
+	    	$response['success'] = true;
+	    	$response['comment'] = $comment['Comment']['comment'];
+	    	$response['created'] = CakeTime::format($comment['Comment']['created'],'%Y/%m/%d');
+	    	$response['username'] = $comment['User']['username'];
 	    } else {
-	     $this->Session->setFlash(__('The note could not be saved. Please, try again.', true), 'flash_error');
+	     	$response['success'] = false;
 	    }
+	    
+	    echo json_encode($response);
 	}
 }
